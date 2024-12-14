@@ -63,9 +63,13 @@ to create file using CMD/Powershell : type <filename> (type template.py)
 WindowsPath('test/test.py')
 ```
 
+## Git commands 
 
 - To add all file = `git add .`
 - To add any particular file = `git add <file_name>`
 - To commit = `git commit -m "commit message"`
 - To push the code = `git push origin main`
+
+
+- MongoDB : https://account.mongodb.com/account/login
 
