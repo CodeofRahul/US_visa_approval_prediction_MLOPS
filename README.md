@@ -73,3 +73,18 @@ WindowsPath('test/test.py')
 
 - MongoDB : https://account.mongodb.com/account/login
 
+
+## Workflow:
+
+1. constants
+2. entity
+3. components
+4. pipelines
+
+
+### Export the environment variable
+```bash
+
+export MONGODB_URL="mongodb+srv://<username>:<password>...."
+
+```
