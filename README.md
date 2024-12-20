@@ -80,6 +80,7 @@ WindowsPath('test/test.py')
 2. entity
 3. components
 4. pipelines
+5. Main file
 
 
 ### Export the environment variable
