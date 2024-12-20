@@ -82,10 +82,97 @@ WindowsPath('test/test.py')
 4. pipelines
 5. Main file
 
-
 ### Export the environment variable
 ```bash
 
 export MONGODB_URL="mongodb+srv://<username>:<password>...."
 
+export AWS_ACCESS_KEY_ID = <AWS_ACCESS_KEY_ID>
+
+export AWS_SECRET_ACCESS_KEY = <AWS_SECRET_ACCESS_KEY>
+
 ```
+
+
+
+### How Amazon S3 works
+
+Amazon S3 stores data as objects within buckets. An object is a file and any metadata that describes the file. A bucket is a container for objects. To store your data in Amazon S3, you first create a bucket and specify a bucket name and AWS Region. Then, you upload your data to that bucket as objects in Amazon S3. Each object has a key (or key name), which is the unique identifier for the object within the bucket.
+
+S3 provides features that you can configure to support your specific use case. For example, you can use S3 Versioning to keep multiple versions of an object in the same bucket, which allows you to restore objects that are accidentally deleted or overwritten. Buckets and the objects in them are private and can only be accessed with explicitly granted access permissions. You can use bucket policies, AWS Identity and Access Management (IAM) policies, S3 Access Points, and access control lists (ACLs) to manage access.
+
+## AWS-CICD-Deployment-with-Github-action 
+
+### 1. Login to AWS console.
+
+### 2. Create IAM user for deployment 
+
+```python
+
+# with specific access
+
+1. EC2 access : It is virtual machine
+
+2. ECR: Elastic Container registry to save your docker image in aws
+
+
+# Description: About the deployment
+
+1. Build docker image of the source code
+
+2. Push your docker image to ECR
+
+3. Launch Your EC2
+
+4. Pull Your image from ECR in EC2
+
+5. Launch your docker image in EC2
+
+# Policy:
+
+1. AmazonEC2ContainerRegistryFullAccess
+
+2. AmazonEC2FullAccess
+
+```
+
+### 3. Create ECR repo to store/save docker image
+
+```
+Save the URI: 315865595366.dkr.ecr.us-east-1.amazonaws.com/visarepo
+```
+
+### 4. Create EC2 machine (Ubuntu)
+
+### 5. Open EC2 and Install docker in EC2 Machine:
+
+```
+#optinal
+
+sudo apt-get update -y
+
+sudo apt-get upgrade
+
+#required
+
+curl -fsSL https://get.docker.com -o get-docker.sh
+
+sudo sh get-docker.sh
+
+sudo usermod -aG docker ubuntu
+
+newgrp docker
+```
+
+### 6. Configure EC2 as self-hosted runner:
+
+```
+setting>actions>runner>new self hosted runner> choose os> then run command one by one
+```
+
+### 7. Setup github secrets:
+
+- AWS_ACCESS_KEY_ID
+- AWS_SECRET_ACCESS_KEY
+- AWS_DEFAULT_REGION
+- ECR_REPO
