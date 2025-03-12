@@ -1,23 +1,34 @@
+[![MLOps](https://img.shields.io/badge/MLOps-Enabled-green)]()
+[![Pipeline](https://img.shields.io/badge/Pipeline-Automated-blue)]()
+[![CI/CD](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-blue?logo=github)](https://github.com/features/actions)
+[![Machine Learning](https://img.shields.io/badge/Machine%20Learning-Enabled-orange)]()
+[![License](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/downloads/release/python-380/)
+
+
 # US_visa_approval_prediction_MLOPS
-This is end to end Machine Learning project in order predict weather the application for the visa will be approved or not.
+
+This project implements an end-to-end **Machine Learning Operations (MLOps)** pipeline to predict the approval status of US visa applications. By leveraging a comprehensive dataset containing various applicant and job-related features, I aim to build a robust model capable of accurately predicting whether a visa application will be certified or denied. This project showcases a full MLOps workflow, including data ingestion, validation, transformation, model training, evaluation, CICD and deployment, all within a structured and scalable architecture.
 
 
 ## Problem Statement:
 **US visa approval status** <br>
 Given certain set of feature such as (continent, education, job-experience, training, employment, current age etc.)
-We have to predict weather the application for the visa will be approved or not.
+I have to predict weather the application for the visa will be approved or not.
 
-**Features:** <br>
-Continent: Asia, Africa, North America, Europe, South America, Oceania
-Education: High School, Master’s Degree, Bachelor’s, Doctorate
-Job Experience: Yes, No
-Required training: Yes, No
-Number of employees: 15000 to 40000 
-Region of employment: West, Northeast, South, Midwest, Island  
-Prevailing wage: 700 to 70000 
-Contract Tenure: Hour, Year, Week, Month 
-Full time: Yes, No 
-Age of company: 15 to 180
+**Data Structure and Features:**
+
+- **continent:** The continent of the employee.
+- **education_of_employee:** The highest level of education attained by the employee.
+- **has_job_experience:** A binary variable indicating whether the employee has job experience (Y/N).   
+- **requires_job_training:** A binary variable indicating whether the job requires training (Y/N).
+- **no_of_employees:** The number of employees in the company.
+- **yr_of_estab:** The year the company was established.
+- **region_of_employment:** The region of employment in the US.
+- **prevailing_wage:** The prevailing wage offered for the position.
+- **unit_of_wage:** The unit of the prevailing wage (Hour/Year).
+- **full_time_position:** A binary variable indicating whether the position is full-time (Y/N).   
+- **case_status:** The target variable, indicating whether the visa application was certified or denied.
 
 **Solution Scope:** <br>
 This can be used on real life by Us visa applicants so that they can improve their Resume and criteria for the approval process.
@@ -27,12 +38,22 @@ This can be used on real life by Us visa applicants so that they can improve the
 2.	Deep Learning: Custom ANN with sigmoid activation Function
 
 **Solution Proposed:** <br>
-We will be using ML
+I will be using ML
 1.	Load the data from DB
 2.	Perform EDA and feature engineering to select the desirable features.
 3.	Fit the ML classification Algorithm and find out which one performs better.
 4.	Select top few and tune hyperparameters.
 5.	 Select the best model based on desired metrics.
+
+## Key Features
+
+* **Automated MLOps Pipeline:** A complete pipeline for data processing, model training, and deployment, ensuring reproducibility and efficiency.
+* **Data Validation and Transformation:** Rigorous data validation to maintain data quality and effective transformation for optimal model performance.
+* **Model Training and Evaluation:** Utilization of advanced machine learning techniques to build and evaluate predictive models.
+* **Continuous Integration/Continuous Deployment (CI/CD):** Automated deployment using CI/CD pipelines for seamless updates.
+* **Scalable Architecture:** Modular design for easy expansion and maintenance.
+* **MongoDB Integration:** Utilizes MongoDB for data storage and retrieval, demonstrating database connectivity.
+* **Comprehensive Logging and Exception Handling:** Robust logging and exception handling for improved monitoring and debugging.
 
 
 
